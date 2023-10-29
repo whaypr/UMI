@@ -10,7 +10,7 @@ Approaches:
 2. optimally using A* with minimum spanning tree heuristic
 
 Sample call:
-`./run.sh test 2.txt 2`
+`./run.sh test/2.txt 2`
 
 ## Approaches
 
