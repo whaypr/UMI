@@ -29,19 +29,19 @@ case "$ALGO" in
         ./greedy-BFS/exec "$INPUT"
     ;;
     2)
-        python3 optimal-AStar-MST/main.py "$INPUT" 2
+        python3 optimal-AStar/main.py "$INPUT" 2
     ;;
     3)
-        python3 optimal-AStar-MST/main.py "$INPUT" 3
+        python3 optimal-AStar/main.py "$INPUT" 3
     ;;
     4)
-        python3 optimal-AStar-MST/main.py "$INPUT" 4
+        python3 optimal-AStar/main.py "$INPUT" 4
     ;;
     5)
-        python3 optimal-AStar-MST/main.py "$INPUT" 5
+        python3 optimal-AStar/main.py "$INPUT" 5
     ;;
     6)
-        python3 optimal-AStar-MST/main.py "$INPUT" 6
+        python3 optimal-AStar/main.py "$INPUT" 6
     ;;
     \?)  echo 'Error: Invalid option' >&2 ; help >&2 ; exit 1 ;;
 esac

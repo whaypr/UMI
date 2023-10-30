@@ -35,7 +35,7 @@ This process is repeated until all trashes are collected.
 ### Optimal A*
 A state in a state space is a position of the robot AND a list of remaining trashes.
 
-The optimal solution is found but the number of opened is dependent on chosen heuristic.
+The optimal solution is found but the number of opened states is dependent on chosen heuristic.
 
 Because I use a custom A* implementation, there is no need to hold the whole state space in memory
 (which in case of the MST heuristic would be O(|maze| * |T|!) states).
@@ -46,7 +46,7 @@ which is typically relavitely small thanks to the use of heuristic.
 1. minimum spanning tree heuristic
 
 Returns a weight of a minimum spanning tree of a complete graph of the remaining trashes and the robot,
-where edge weights are lengths of the shortests path between corresponding pairs. 
+where edge weights are lengths of the shortest paths between corresponding pairs. 
 
 Edge weights of the complete graph are computed using Dijkstra algorithm (`nx.shortest_path` library implementation) (Since |T| << |maze|, the Floyd–Warshall algorithm would probably take longer.) and the minimum spanning tree is constructed using Kruskal algorithm (`nx.minimum_spanning_tree` library implementation).
 
