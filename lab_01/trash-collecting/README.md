@@ -2,6 +2,11 @@
 Given a maze with robot R and trashes T,
 the goal for the robot is to collect all the trashes walking the shortest route possible.
 
+<div align="center">
+    <img src="./maze2-AStar-MST.gif" alt="demo gif" />
+</div>
+
+<br />
 
 ## Usage
 `./run.sh <input_path> <approach_number>`
