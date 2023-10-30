@@ -3,6 +3,7 @@ import networkx as nx
 import copy
 
 from A_star import A_star
+from heuristics import Heuristics
 
 # load maze data
 with open(sys.argv[1], "r") as f:
@@ -46,29 +47,22 @@ for r in range(1, h-1):
         if maze[r-1][c] != "X":
             maze_graph.add_edge(node, f"{r-1}_{c}")
 
-# create trashes graph
-trashes_graph = nx.Graph()
+# get heuristic option and prepare heuristic
+heuristics = Heuristics(maze_graph, trashes)
+HEUR_OPT = sys.argv[2]
 
-for i in range(0, len(trashes)):
-    for j in range(i+1, len(trashes)):
-        weig = len(nx.shortest_path(maze_graph, trashes[i], trashes[j])) - 1
-        trashes_graph.add_edge(trashes[i], trashes[j], weight=weig)
-
-# define A* heuristic
-def heuristic(start_node, end_nodes):
-    heur_graph = copy.deepcopy(trashes_graph)
-
-    for to_delete in set(trashes).difference(set(end_nodes)):
-        heur_graph.remove_node(to_delete)
-    
-    for n in end_nodes:
-        weig = len(nx.shortest_path(maze_graph, start_node, n)) - 1
-        heur_graph.add_edge(start_node, n, weight=weig)
-    
-    MST = nx.minimum_spanning_tree(heur_graph)
-
-    MST_weight = sum([MST.edges[e]["weight"] for e in MST.edges])
-    return MST_weight
+if HEUR_OPT == '2':
+    heuristic = heuristics.MST
+elif HEUR_OPT == '3':
+    heuristic = heuristics.furthest_and_remaining
+elif HEUR_OPT == '4':
+    heuristic = heuristics.nearest
+elif HEUR_OPT == '5':
+    heuristic = heuristics.remaining
+elif HEUR_OPT == '6':
+    heuristic = heuristics.zero
+else:
+    raise Exception("Invalid heuristic number!")
 
 # run A*
 path, states_opened = A_star(maze_graph, heuristic, robot, trashes)
