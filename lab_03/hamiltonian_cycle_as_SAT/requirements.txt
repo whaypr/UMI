@@ -1,0 +1,4 @@
+networkx==3.2.1
+pygraphviz==1.11
+python-sat==0.1.8.dev12
+six==1.16.0
