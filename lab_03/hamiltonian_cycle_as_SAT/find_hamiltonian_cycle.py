@@ -8,6 +8,9 @@
 # https://discuss.codechef.com/t/how-to-solve-hamiltonian-path-using-sat-solver-for-undirected-graph/13261/3.
 
 import networkx as nx
+
+import sys
+sys.path.append('../utils')
 import solve_SAT
 
 
