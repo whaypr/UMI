@@ -1,4 +1,6 @@
-# Hledání Hamiltonovské kružnice v grafu převodem na instanci SAT problému a následné vyřešení pomocí SAT řešice
+# Hledání Hamiltonovské kružnice v grafu
+
+Úlohu budeme řešit převodem na instanci SAT problému a následným vyřešením SAT řešičem.
 
 ### Jak spustit
 
@@ -19,7 +21,7 @@ Nainstalování potřebných knihoven
 
 Spuštění
 ```
-> python3 src/find_hamiltonian_cycle.py < inputs/house.graph
+> python3 find_hamiltonian_cycle.py < inputs/house.graph
 ```
 
 ### Jak to funguje
