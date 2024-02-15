@@ -48,7 +48,7 @@ I used a planner called [Scorpion](https://github.com/ipc2023-classical/planner2
  
 The planner is an extension of the [Fast Downward](https://www.fast-downward.org/) planner and it was run with the recommended configuration (see the file `scorpion.sh`).
 
-The planner can be found in the directory `scorpion`.
+In order for the script `scorpion.sh` to work, a directory named `scorpion` must be created and the Scorpion planner must be built inside of it.
 
 A run info for the `sample-problem` can be found in [outputs/solution_2/sample-problem.run](outputs/solution_2/sample-problem.run).
 
